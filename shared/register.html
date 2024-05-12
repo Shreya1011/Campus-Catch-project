@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+         <title>Sign up</title>
+ </head>
+     <body>
+         <div class="screen">
+             <div class="right">
+                   <form action="register.php" class="bg-warning p-4" onsubmit="return validateForm()" method="POST">
+                     <section class="copy">
+                        <h2>Sign up</h2>
+                        </section>
+ 
+                     <div class="input-field">
+                        <label for="username">Name:</label>
+                        <input required type="text" id="username" name="username" class="input"  placeholder="Username">
+                        <span id="fnameError" class="error"></span>
+
+                     </div> 
+
+                     <div class="input-field">
+                        <label for="email">Email:</label>
+                        <input required type="email" id="email" name="email" class="input" placeholder="Email">
+                        <span id="emailError" class="error"></span>
+                        
+                    </div>
+                    
+
+                     <div class="input-field">
+                        <label for="password">Password:</label>
+                        <input required type="password" id="password" name="password">
+                        <span id="passwordError" class="error"></span>
+
+                     </div> 
+
+                     <div class="input-field">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input required type="password" id="confirm_password" name="confirm_password">
+                        <span id="confirmPasswordError" class="error"></span>
+                     </div>
+                      
+                     <div class="input-field">
+                         <select required name="user_type" class="input" placeholder="User Type">
+                 
+                             <option value="student">Student</option>
+                             <option value="faculty">Faculty</option>
+                             <option value="alumni">Alumni</option>
+                         
+                         </select>
+                         
+                     </div> 
+                     <div class="input-field">
+                         <button class="submit"></a>Sign up</button>
+                    </div>
+                    <div class="signin">
+                        <span>Already a user ? <a href="login.html"> Log in</a></span>
+                       </div>
+    
+                     <section class="copy legal">
+                        <p><span class="small"> by continuing you agree to our <br><a href="#"> priavcy</a> &amp; <a href="#"> terms of services</a>.</span></p>
+                     </section>
+                   </form>
+                   
+             </div>
+
+             <div class="left">
+                <section class="copy">
+                    <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 200;">To access further content you have to be a student or faculty at Banasthali Vidyapith</h2>
+                </section>
+         </div>
+         <script>
+             function validate()
+             {
+                pass1Obj=document.getElementById("pass1");
+                pass2Obj=document.getElementById("pass2");
+                if(pass1Obj.value===pass2Obj.value)
+                {
+                 return true;
+                }
+                else
+                {
+                 alert("Password Mismatch");
+                 return false;
+                }
+             }
+         </script>
+         
+<script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+       
+        var fnameError = document.getElementById('fnameError');
+       var emailError = document.getElementById('emailError');
+        var passwordError = document.getElementById('passwordError');
+        var confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        fnameError.textContent = "";
+        
+        emailError.textContent = "";
+        
+        passwordError.textContent = "";
+        confirmPasswordError.textContent = "";
+
+        var isValid = true;
+
+        if (username.trim() === "") {
+            fnameError.textContent = "First name is required";
+            isValid = false;
+        }
+
+        
+        if (email.trim() === "") {
+            emailError.textContent = "Email is required";
+            isValid = false;
+} else if (!isValidEmail(email)) {
+            emailError.textContent = "Invalid email address";
+            isValid = false;
+        }
+
+        if (password.trim() === "") {
+            passwordError.textContent = "Password is required";
+            isValid = false;
+        }
+	else if(!isValidPassword(password)){
+	    passwordError.textContent = "Must contain at least 1 number,1 uppercase and 1 lowercase letter, and at least 8 character long";
+            isValid = false;
+	}
+
+        if (confirmPassword.trim() === "") {
+            confirmPasswordError.textContent = "Confirm password is required";
+            isValid = false;
+        } else if (password !== confirmPassword) {
+            confirmPasswordError.textContent = "Passwords do not match";
+            isValid = false;
+        }
+
+
+        
+
+        return isValid;
+    }
+
+   function isValidEmail(email) {
+ 
+       var re =  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.\.-]+\.[a-zA-Z]{2,4}$/;
+       return re.test(email);
+    }
+
+    
+    function isValidPassword(password) {
+	var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+        return re.test(password);
+    }
+
+
+</script>
+     </body>
+ </html>

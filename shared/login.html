@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <title>Login</title>
+</head>
+    <body>
+        <div class="screen">
+            <div class="right">
+                <form action="login.php" method="POST">
+                    <section class="copy">
+                       <h2>Log In</h2>
+                       </section>
+
+                       <div class="input-field">
+                        <input required type="text" name="username" class="input" id="username"  autocomplete="off" placeholder="Username">
+                        <!-- <label for="username">Username</label>  -->
+                    </div>  
+                    <div class="input-field">
+                        <input type="password" class="input" id="pass1" required minlength="4" name="password" placeholder="Password">
+                        <!-- <label for="pass1">Password</label> -->
+                    </div>
+                    
+                    <div class="input-field">
+                        <button class="submit" value="Sign In"> <a href="../userprofile.html"></a>Login</button>
+                   </div> 
+                   
+                   <div class="signin">
+                    <span>New user ? <a href="register.html">Signup</a></span>
+                   </div>
+                   <div class="signin">
+                   <a href="forget.php">Forgot Password ?</a>
+               </div> 
+                  </form>
+            </div>
+            <div class="left">
+                <section class="copy">
+                    <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 200;">Login to explore more about Banasthali Vidyapith</h2>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

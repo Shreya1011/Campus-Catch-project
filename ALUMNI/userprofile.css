@@ -1,0 +1,86 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #FFE4C9;
+        }
+
+        .outer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .profile {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .profile img {
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .profile h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .profile p {
+            color: #666;
+        }
+
+        .student {
+            background-color: #87CEFA;
+        }
+
+        .faculty {
+            background-color: #90EE90;
+        }
+
+        .alumni {
+            background-color: #85586F;
+        }
+
+        .profile-button {
+            background-color: white;
+            color: Black;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .select {
+            margin: 0;
+            text-align: center;
+            color: black;
+        }
+
+        @media screen and (max-width: 1125px) {
+            body {
+                align-items: flex-start;
+            }
+
+            .outer {
+                width: 100%;
+            }
+        }
